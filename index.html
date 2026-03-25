@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minimal Page</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f5f2ee;
+      --ink: #1a1814;
+      --muted: #8a8178;
+      --accent: #c84b2f;
+      --border: #dedad4;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Georgia', serif;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 2rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+
+    header h1 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    header h1 span { color: var(--accent); }
+
+    nav a {
+      font-size: .8rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 2rem;
+      transition: color .2s;
+    }
+
+    nav a:hover { color: var(--ink); }
+
+    /* ── Hero ── */
+    main {
+      display: grid;
+      place-items: center;
+      padding: 4rem 2rem;
+    }
+
+    .hero {
+      max-width: 560px;
+      text-align: center;
+    }
+
+    .hero p.label {
+      font-size: .75rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+    }
+
+    .hero h2 {
+      font-size: clamp(2rem, 6vw, 3.4rem);
+      font-weight: normal;
+      line-height: 1.18;
+      margin-bottom: 1.4rem;
+    }
+
+    .hero h2 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero p.body {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 2.4rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .7rem 2rem;
+      border: 1px solid var(--ink);
+      font-size: .8rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+
+    .btn:hover {
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    /* ── Divider ── */
+    .rule {
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      margin: 3rem auto;
+    }
+
+    /* ── Cards ── */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1px;
+      border: 1px solid var(--border);
+      max-width: 560px;
+      width: 100%;
+    }
+
+    .card {
+      padding: 1.6rem;
+      border-right: 1px solid var(--border);
+    }
+
+    .card:last-child { border-right: none; }
+
+    .card .num {
+      font-size: 1.8rem;
+      font-style: italic;
+      color: var(--accent);
+      display: block;
+      margin-bottom: .3rem;
+    }
+
+    .card p {
+      font-size: .75rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ── Footer ── */
+    footer {
+      padding: 1.4rem 2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-size: .75rem;
+      color: var(--muted);
+      letter-spacing: .04em;
+    }
+
+    footer a {
+      font-size: .75rem;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Studio<span>.</span></h1>
+    <nav>
+      <a href="#">Work</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <p class="label">Est. 2024 &nbsp;·&nbsp; Design &amp; Code</p>
+      <h2>Craft with <em>intention,</em> build with care.</h2>
+      <p class="body">A quiet space for thoughtful work — where every detail matters and nothing is left to chance.</p>
+      <a href="#" class="btn">See the work</a>
+
+      <div class="rule"></div>
+
+      <div class="cards">
+        <div class="card">
+          <span class="num">12</span>
+          <p>Projects</p>
+        </div>
+        <div class="card">
+          <span class="num">4</span>
+          <p>Years</p>
+        </div>
+        <div class="card">
+          <span class="num">∞</span>
+          <p>Curiosity</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Studio</p>
+    <a href="#">Back to top ↑</a>
+  </footer>
+
+</body>
+</html>
